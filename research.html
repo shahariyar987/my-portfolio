@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Md. Al Shahariyar</title>
+<meta name="description" content="Research interests of Md. Al Shahariyar: Large Language Models, NLP, Machine Learning and Security.">
+<meta property="og:title" content="Research — Md. Al Shahariyar">
+<meta property="og:description" content="Research interests of Md. Al Shahariyar: Large Language Models, NLP, Machine Learning and Security.">
+<meta property="og:image" content="as.jpg">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g'%3E%3Cstop offset='0' stop-color='%235eead4'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%230a0a12'%3EAS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch(e){}</script>
+</head>
+<body data-page="research">
+<div id="curtain"></div>
+<div id="progress"></div>
+<canvas id="bg-canvas"></canvas>
+<div id="cursor-glow"></div>
+<div class="noise"></div>
+<header>
+<nav id="nav">
+  <a href="index.html" class="logo"><b>AS</b><span>Shahariyar</span></a>
+  <ul class="nav-links" id="nav-links"></ul>
+  <div class="nav-actions">
+    <span class="kbd" id="open-palette" title="Command palette (Ctrl+K)">⌘ K</span>
+    <button class="icon-btn" id="theme-btn" aria-label="Toggle theme"></button>
+    <button class="icon-btn" id="menu-btn" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</nav>
+</header>
+<main>
+<section class="page-hero">
+  <div class="big-num">01</div>
+  <div class="container">
+    <div class="crumbs"><a href="index.html">~/home</a><span>/</span><span style="color:var(--a1)">research</span></div>
+    <h1><span class="line"><span>Research</span></span><span class="line"><span class="grad-text">Interests.</span></span></h1>
+    <p>The questions I want to spend the next decade on — and the areas I'm actively reading and building in. My long-term goal is graduate study and a career in academic research.</p>
+    <div class="meta-row"><span>direction <b>LLMs</b></span><span>interest <b>NLP</b></span><span>primary <b>AI &amp; ML</b></span><span>technical <b>Security</b></span></div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Focus areas</div><h2>Where my curiosity <span class="grad-text">points.</span></h2></div>
+    <div class="research-grid" id="research-grid"></div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="container">
+    <div class="card spot playground reveal">
+      <div>
+        <div class="eyebrow">Interactive · NLP</div>
+        <h3>How an LLM <span class="grad-text">sees your words</span></h3>
+        <p>Language models don't read words — they read <em>tokens</em>. Type anything below and watch it get split into sub-word pieces, each mapped to an ID. Hover a token to see which others it "attends" to.</p>
+        <textarea class="pg-input" id="pg-in" rows="3">Large language models are transforming natural language understanding!</textarea>
+        <div class="pg-meta"><span>tokens <b id="pg-tok">0</b></span><span>chars <b id="pg-chr">0</b></span><span>ratio <b id="pg-rat">0</b></span></div>
+      </div>
+      <div>
+        <div class="tokens" id="tokens"></div>
+        <div class="pg-hint">// toy sub-word tokenizer + heuristic attention, built in vanilla JS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Open questions</div><h2>Questions I want to <span class="grad-text">answer.</span></h2><p>Click a question to read why it matters to me.</p></div>
+    <div class="questions" id="questions"></div>
+  </div>
+</section>
+
+<section class="sec-tight">
+  <div class="container">
+    <div class="sec-head reveal"><div class="eyebrow">Roadmap</div><h2>The path to <span class="grad-text">academia.</span></h2></div>
+    <div class="roadmap" id="roadmap"></div>
+  </div>
+</section>
+
+<div class="container"><a class="card spot next-page reveal" id="next-page" href="index.html"></a></div>
+</main>
+<footer><div class="container foot">
+  <span>© <span class="yr"></span> Md. Al Shahariyar · Computer Science &amp; Engineering, UIU</span>
+  <span class="mono">Designed &amp; built from scratch · press <span class="kbd" style="cursor:default">⌘K</span></span>
+</div></footer>
+
+<div class="overlay" id="pal-overlay"><div class="palette">
+  <input id="pal-in" placeholder="Type a command or search…" autocomplete="off">
+  <div class="pal-list" id="pal-list"></div>
+</div></div>
+<div class="toast" id="toast"></div>
+<button class="icon-btn" id="top-btn" aria-label="Back to top">↑</button>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
